@@ -2,13 +2,26 @@
   "name": "pptonline",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:front": "parcel serve ./client/index.html",
+    "dev:api": "nodemon --watch ./server/index.ts --exec ts-node ./server/index.ts ",
+    "build:front": "parcel build ./client/index.html",
+    "build:api": "tsc",
+    "build": "npm run build:front && npm run build:api",
+    "start": "node ./server/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^20.12.12"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase": "^8.10.1",
+    "firebase-admin": "^12.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "nodemon": "^3.1.2",
+    "parcel": "^2.12.0"
   }
 }
