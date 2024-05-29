@@ -1,6 +1,7 @@
 import * as express from "express";
 import * as cors from "cors";
 import { db, rtdb } from "./db";
+import * as path from "path";
 
 const app = express();
 const port = 3000;
@@ -14,6 +15,9 @@ const roomsCollection = db.collection("rooms");
 
 app.post("/mensajes/:rtdbRoomId", function (req, res) {
   return "hola";
+});
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../dist/index.html"));
 });
 
 app.listen(port, () => {
