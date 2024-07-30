@@ -24,6 +24,13 @@ class Button extends HTMLElement {
         const buttonEl = document.createElement("button");
         buttonEl.className = "root";
         buttonEl.textContent = this.textContent;
+        buttonEl.addEventListener("click", (event) => {
+            event.preventDefault(); // Evitar el comportamiento predeterminado de un clic en un botón
+            const form = this.closest("form"); // Buscar el formulario más cercano al botón
+            if (form) {
+                form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true })); // Disparar manualmente el evento de envío del formulario
+            }
+        });
         this.shadow.appendChild(buttonEl);
     }
 }

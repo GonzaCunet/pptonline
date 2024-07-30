@@ -1,34 +1,40 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.initResult = void 0;
+exports.InitResult = void 0;
 const state_1 = require("../../state");
-function initResult(params) {
-    const div = document.createElement("div");
-    let jugadaCompu = state_1.state.getState().currentGame.computerPlay;
-    let miJugada = state_1.state.getState().currentGame.myPlay;
-    const ganador = state_1.state.whoWins(miJugada, jugadaCompu);
-    let resultado;
-    if (ganador == "ganaste") {
-        resultado = "GANASTE";
+const router_1 = require("@vaadin/router");
+class InitResult extends HTMLElement {
+    connectedCallback() {
+        this.render();
     }
-    if (ganador == "empate") {
-        resultado = "EMPATE";
+    render() {
+        let jugadaCompu = state_1.state.getState().currentGame.computerPlay;
+        let miJugada = state_1.state.getState().currentGame.myPlay;
+        const ganador = state_1.state.whoWins(miJugada, jugadaCompu);
+        let resultado;
+        if (ganador == "ganaste") {
+            resultado = "GANASTE";
+        }
+        if (ganador == "empate") {
+            resultado = "EMPATE";
+        }
+        if (ganador == "perdiste") {
+            resultado = "PERDISTE";
+        }
+        this.innerHTML = `
+    <div class="result-container">
+      <div class="${resultado}">
+        <resultado-el stars="${resultado}"></resultado-el>
+        <score-el></score-el>
+        <button-el>VOLVER A JUGAR</button-el>
+      </div>
+    </div>
+    `;
+        const startButton = this.querySelector("button-el");
+        startButton?.addEventListener("click", () => {
+            router_1.Router.go("/howtoplay");
+        });
     }
-    if (ganador == "perdiste") {
-        resultado = "PERDISTE";
-    }
-    div.className = "result-container";
-    div.innerHTML = `
-    <div class="${resultado}"
-    <div><resultado-el stars="${resultado}"></resultado-el>
-    <div><score-el></score-el></div>
-    <div><button-el>VOLVER A JUGAR</button-el></div></div>
-     
- `;
-    const startButton = div.querySelector("button-el");
-    startButton?.addEventListener("click", () => {
-        params.goTo("/init");
-    });
-    return div;
 }
-exports.initResult = initResult;
+exports.InitResult = InitResult;
+customElements.define("result-page", InitResult);

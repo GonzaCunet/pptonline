@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 50px;
   gap: 15px;
 }
 
@@ -15,4 +15,21 @@
   line-height: 40px;
   letter-spacing: 0em;
   text-align: center;
+}
+
+.jugadores-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+  gap: 40px;
+  width: 626.53px;
+  height: 60px;
+  top: 24px;
+  left: 336px;
+  gap: 0px;
+  opacity: 0px;
+}
+.rival {
+  color: orange;
 }

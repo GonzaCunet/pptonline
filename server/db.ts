@@ -4,7 +4,6 @@ const serviceAccount =
   process.env.ENVIRONMENT == "DEV"
     ? require("./key.json")
     : require("/etc/secrets/key.json");
-
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount as any),
   databaseURL: "https://el-fairbase-default-rtdb.firebaseio.com",
