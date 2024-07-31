@@ -3,9 +3,7 @@
     "module": "CommonJS",
     "target": "ESNext",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "allowImportingTsExtensions": true
+    "resolveJsonModule": true
   },
   "files": ["./server/index.ts"],
   "include": ["client/*/", "server/*/"]

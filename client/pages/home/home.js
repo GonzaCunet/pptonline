@@ -17,7 +17,7 @@ class InitHome extends HTMLElement {
 
       <div class="button-container">.
         <button-el class="signup">NUEVO JUEGO</button-el>
-      <button-el class="coderoom">INGRESAR ROOM</button-el>
+      <button-el class="joinroom">INGRESAR ROOM</button-el>
         <button-el class="prueba">PRUEBA</button-el>
       </div>
       <div class="hands-container">
@@ -30,9 +30,9 @@ class InitHome extends HTMLElement {
         startButton?.addEventListener("click", () => {
             router_1.Router.go("/newgame");
         });
-        const startButton2 = document.querySelector(".coderoom");
+        const startButton2 = document.querySelector(".joinroom");
         startButton2?.addEventListener("click", () => {
-            router_1.Router.go("/coderoom");
+            router_1.Router.go("/entryname");
         });
     }
 }

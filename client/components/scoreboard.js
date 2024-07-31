@@ -33,16 +33,16 @@ class ScoreEl extends HTMLElement {
         this.render();
     }
     render() {
-        const currentState = state_1.state.getState();
-        // // const history = state.getHistory();
-        const sh = currentState.history.scoreHuman;
-        const sc = currentState.history.scoreComputer;
+        const myScore = state_1.state.play.currentGame.myScore;
+        const p2Score = state_1.state.play.currentGame.scoreP2;
+        const myName = state_1.state.play.currentGame.myName;
+        const p2Name = state_1.state.play.currentGame.nameP2;
         const container = document.createElement("div");
         container.className = "root";
         container.innerHTML = `
           <h1 class="title">SCORE: </h2>
-          <p class="player-uno">Vos: ${sh}</p>
-          <p class="player-dos">Computer: ${sc}</p>
+          <p class="player-uno">${myName}: ${myScore}</p>
+          <p class="player-dos">${p2Name}: ${p2Score}</p>
       `;
         this.shadow.appendChild(container);
     }

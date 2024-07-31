@@ -50,8 +50,13 @@ class InitSelectMove extends HTMLElement {
             });
             if (tiempoRestante === 0) {
                 clearInterval(intervalo);
-                state_1.state.setComputerMove();
-                router_1.Router.go("/showedmoves");
+                state_1.state
+                    .patchData(state_1.state.play.currentGame.rtdbRoomId, state_1.state.play.currentGame.myId)
+                    .then(() => {
+                    state_1.state.getRoomData(state_1.state.play.currentGame.rtdbRoomId).then(() => {
+                        router_1.Router.go("/showedmoves");
+                    });
+                });
             }
         }, 1000);
     }

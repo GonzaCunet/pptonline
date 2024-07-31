@@ -8,11 +8,11 @@ class ShowedMoves extends HTMLElement {
         this.render();
     }
     render() {
-        let jugadaCompu = state_1.state.getState().currentGame.computerPlay;
+        let jugadaRival = state_1.state.getState().currentGame.playP2;
         let miJugada = state_1.state.getState().currentGame.myPlay;
         this.innerHTML = `
       <div class="showedMoves-container">
-        <moves-el type="hand-imagenGrande" class="computer-move" hand="${jugadaCompu}"></moves-el>
+        <moves-el type="hand-imagenGrande" class="computer-move" hand="${jugadaRival}"></moves-el>
         <moves-el type="hand-imagenGrande" class="human-move" hand="${miJugada}"></moves-el>
       </div>
    `;
