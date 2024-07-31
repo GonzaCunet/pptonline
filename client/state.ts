@@ -1,4 +1,3 @@
-import { rtdb } from "../server/db";
 import { API_BASE_URL } from "./rtdb";
 import { dataBase } from "./rtdb";
 import { values } from "lodash";
@@ -29,16 +28,7 @@ const state = {
     },
   },
   listeners: [],
-  // setComputerMove() {
-  //   const randomMove = Math.floor(Math.random() * 3) + 1;
-  //   let computerPlay = {
-  //     1: "piedra",
-  //     2: "papel",
-  //     3: "tijera",
-  //   }[randomMove];
-  //   const currentState = this.getState();
-  //   currentState.currentGame.computerPlay = computerPlay;
-  // },
+
   setMove(move: jugada) {
     const currentState = this.getState();
     currentState.currentGame.myPlay = move;

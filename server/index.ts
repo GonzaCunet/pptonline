@@ -107,6 +107,9 @@ app.post("/rooms", (req, res) => {
 app.get("/room/:roomId", (req, res) => {
   const { userId } = req.query;
   const { roomId } = req.params;
+  if (!userId) {
+    return;
+  }
 
   usersCollection
     .doc(userId.toString())
