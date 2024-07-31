@@ -4,7 +4,7 @@ import "./components/resultadoEl.ts";
 import "./components/scoreboard.ts";
 import "./pages/home/home.ts";
 import "./pages/result/result.ts";
-import "./pages/selectmove/selectmove.ts";
+import "./pages/selectMove/selectMove.ts";
 import "./pages/showed-moves/showed-moves.ts";
 import "./pages/newgame/newgame.ts";
 import "./router.ts";
