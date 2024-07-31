@@ -138,7 +138,7 @@ const state = {
   },
 
   async getRoomId(roomId, userId) {
-    return fetch(API_BASE_URL + "/room/join/" + roomId + "?userId=" + userId, {
+    return fetch(API_BASE_URL + "/room/" + roomId + "?userId=" + userId, {
       method: "GET",
       headers: { "content-type": "application/json" },
     }).then((res) => {

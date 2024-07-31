@@ -104,7 +104,7 @@ app.post("/rooms", (req, res) => {
       }
     });
 });
-app.get("/room/join/:roomId", (req, res) => {
+app.get("/room/:roomId", (req, res) => {
   const { userId } = req.query;
   const { roomId } = req.params;
 
