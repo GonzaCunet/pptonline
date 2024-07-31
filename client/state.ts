@@ -87,7 +87,7 @@ const state = {
 
   auth(nombre) {
     return fetch(API_BASE_URL + "/auth", {
-      method: "post",
+      method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ nombre: nombre }),
     }).then((res) => {
@@ -96,7 +96,7 @@ const state = {
   },
   async setRoom(userId, nombre) {
     return fetch(API_BASE_URL + "/rooms", {
-      method: "post",
+      method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ userId: userId, nombre: nombre }),
     }).then((res) => {
@@ -106,7 +106,7 @@ const state = {
 
   async joinRoom(userId: string, name: string, rtdbRoomId: string) {
     return fetch(API_BASE_URL + "/room/join", {
-      method: "post",
+      method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
         userId: userId,
@@ -139,7 +139,7 @@ const state = {
 
   async getRoomId(roomId, userId) {
     return fetch(API_BASE_URL + "/room/join/" + roomId + "?userId=" + userId, {
-      method: "get",
+      method: "GET",
       headers: { "content-type": "application/json" },
     }).then((res) => {
       return res.json();
@@ -147,7 +147,7 @@ const state = {
   },
   async getRoomData(rtdbRoomId) {
     return fetch(API_BASE_URL + "/rooms/" + rtdbRoomId, {
-      method: "get",
+      method: "GET",
     })
       .then((res) => {
         return res.json();

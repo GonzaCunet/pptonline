@@ -153,21 +153,6 @@ app.post("/room/join", (req, res) => {
   });
 });
 
-// app.get("/rooms/:rtdbRoomId", function (req, res) {
-//   const { rtdbRoomId } = req.params;
-//   const RoomsRef = rtdb.ref("/roomsppt/" + rtdbRoomId + "/data");
-
-//   RoomsRef.get().then((snapshot) => {
-//     const usersData: any[] = [];
-
-//     snapshot.forEach((doc) => {
-//       usersData.push(doc);
-//     });
-
-//     res.json(usersData);
-//   });
-// });
-
 app.patch("/room/:rtdbRoomId", function (req, res) {
   const { rtdbRoomId } = req.params;
   const { userID } = req.body;
