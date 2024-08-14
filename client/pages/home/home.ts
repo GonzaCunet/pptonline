@@ -16,7 +16,6 @@ export class InitHome extends HTMLElement {
       <div class="button-container">.
         <button-el class="signup">NUEVO JUEGO</button-el>
       <button-el class="joinroom">INGRESAR ROOM</button-el>
-        <button-el class="prueba">PRUEBA</button-el>
       </div>
       <div class="hands-container">
         <moves-el type="hand-img" hand="piedra"></moves-el>
